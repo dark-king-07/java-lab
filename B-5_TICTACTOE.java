@@ -27,17 +27,24 @@ import java.awt.event.ActionListener;
             setResizable(false);
             setVisible(true);
         }
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) 
+        {
             JButton button = (JButton) e.getSource();
-            if (button.getText().isEmpty()) {
+            if (button.getText().isEmpty()) 
+            {
                 button.setText(xTurn ? "X" : "O");
-                if (checkWin()) {
+                if (checkWin()) 
+                {
                     JOptionPane.showMessageDialog(this, "Player " + (xTurn ? "X" : "O") + " wins!");
                     resetBoard();
-                } else if (checkDraw()) {
+                } 
+                else if (checkDraw()) 
+                {
                     JOptionPane.showMessageDialog(this, "It's a draw!");
                     resetBoard();
-                } else {
+                } 
+                else 
+                {
                     xTurn = !xTurn;
                 }
             }
@@ -58,9 +65,12 @@ import java.awt.event.ActionListener;
         }
         boolean checkDraw() 
         {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if (buttons[i][j].getText().isEmpty()) {
+            for (int i = 0; i < 3; i++)
+                {
+                for (int j = 0; j < 3; j++) 
+                {
+                    if (buttons[i][j].getText().isEmpty())
+                    {
                         return false;
                     }
                 }
